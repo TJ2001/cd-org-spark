@@ -1,0 +1,29 @@
+<h1>CD List!</h1>
+#if ($compactDiscs)
+  <ul>
+    #foreach ($compactDisc in $compactDiscs)
+      <li>$compactDisc.getAlbum()</li>
+      <li>$compactDisc.getArtist()</li>
+      <li>$compactDisc.getGenre()</li>
+    #end
+  </ul>
+#else
+  <p>No CD!</p>
+#end
+
+
+<p>Add a new CD:</p>
+
+<form action="/CD" method="post">
+  <label for="album">Album</label>
+  <input id="album" name="album" type="text">
+
+  <label for="artist">Artist</label>
+  <input id="artist" name="artist" type="text">
+
+  <label for="genre">Genre</label>
+  <input id="genre" name="genre" type="text">
+
+
+  <button type="submit" class="btn btn-default">Add Album</button>
+</form>
