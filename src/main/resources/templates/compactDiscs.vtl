@@ -1,0 +1,15 @@
+<h1>CD List!</h1>
+
+#if ($compactDiscs)
+  <ul>
+    #foreach ($compactDisc in $compactDiscs)
+      <li><strong>$compactDisc.getAlbum()</strong></li>
+      <li>$compactDisc.getArtist()</li>
+      <li>$compactDisc.getGenre()</li>
+    #end
+  </ul>
+#else
+  <p>No CD!</p>
+#end
+
+<a href="/">Add more CDs.</a>
